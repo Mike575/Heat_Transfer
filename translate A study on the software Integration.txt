@@ -117,4 +117,81 @@ They are AP221,AP227 and AP231.
 These application protocols involve process data,such as of the material and stream,equipment,control,economic character,energy,and design base,etc.
 这些应用协议包括工艺数据例如物料和流量、设备、控制、经济特征、能量和设计基础等等。
 With this standard,the data collected from process could be treated,and put in the database according to the standard style.
+通过这些标准，收集自工艺的数据能够被加工，并根据标准类型储存在数据库中。
+Data from different database can be expressed unified.
+来自不同数据库的数据能够被统一表达。
+STEP standardization process is shown in Fig,2.
+STEP 标准化流程在图二中展示。
+
+C Task integration 任务整合
+
+The aim of integration environment and communication standard is to realize the integration of different operation tasks in chemical process.
+整合环境和建立会话标准是为了实现对化工工艺不同操作任务的整合。
+In the task integration layer,an integration scheme with personnel participation is proposed.
+在任务整合层次中，一份全体人员参与整合的方案被提出。
+MOnitoring and handling of abnormal situations and accidents needs personal involvement,while many decision making became rational and effective in integration and participating of human and software together.
+监视和处理异常情况和事件需要人的参与，然而通过整合人和软件的参与，决定将变得合理与高效。
+In the tasks layer,expert knowledge is important and thus has been put in the system.
+在任务层次中，专家的经验变得十分重要，因此它们被输入进了这个系统。
+A graphic usser interface(GUI) is developed for the users conveniently.
+为了便于使用者使用，一份图形操作界面也为此开发。
+
+III The integration model base on ActiveX technology for process simulation  基于ActiveX技术的软件流程模拟整合模型
+
+The proposed framework is an application one for process industrial enterprise.
+提出的框架是一个用于化工企业的应用软件。
+For integration and implementation of different software and approaches,the corresponding model is needed to be developed.
+为了整合和启用不同的软件与方法，相应的模型需要被提出。
+Such as ActiveX technology for OLE service technology,ASPEN PLUS can support ActiveX automation assessment.
+例如利用ActiveX技术能够实现对象的链接与嵌入服务，ASPEN PLUS 能够支持ActiveX 的自动评估。
+
+ActiveX is developed to exchange information between vary software with component object model by Microsoft.
+ActiveX 是微软开发用来在不同软件和组件对象模型间交换信息的技术。
+Different software could communicate their information wih the same standard based on ActiveX technology.
+基于ActiveX 技术不同的软件能够通过相同的标准来交流它们的信息。
+
+ASPEN PLUS uses a C/S calculation method,and supports data communication as ActiveX automaiton server.
+ASPEN PLUS 使用了主从式计算方法，作为ActiveX 的自动服务器来支持数据交流。
+Its features include:operating commands in the ASPEN PLUS;input and output data from ASPEN PLUS.
+它的特征包括：操控ASPEN PLUS命令；从ASPEN PLUS 输入和输出数据。
+The object is described through the component object model,which should be identified as IHapp object in Visual Bascic.
+目标通过组件对象模块描述，它能在Visual Basic 中定义为IHapp 对象。
+The properties of object are able to be accessed for process simulation includes；打他，block，stream，B1/B2/B3(as the units),input,tem(abbr. of temperature).
+在流程模拟中对象的属性能够被获得，例如：数据、模块、流量、B1/B2/B3(作为单元模块)、输入、温度。
+The application objects os ASPEN PLUS are following as table 1.
+ASPEN PLUS 应用对象如表一所示。
+The transmission models of properties data in ASPEN PLUS simulation is shown as Fig.3.
+ASPEN PLUS 传递模型的数据特征如图三所示。
+
+IV. A case Study    个案研究
+
+In this work,the solvent recovery system is used as a case study to test the effectiveness of the proposed software integration framework.
+本文，溶剂回收系统作为一个案例研究，来测试软件整合框架的效率。
+The solvent recovery process is a typical chemical process in refinery industry.
+在精炼厂溶剂回收工艺是一种典型的化学工艺。
+As shown in Fig.4,the flow sheet includes the heating units,columns,heat exchangers,containers,pumps,ammonia compressor,vacuum compressors,filters,screw pump and so on
+如图四所示，流程图中包括了加热器模块、换热器模块、容器、泵、氨压缩机、真空压缩机、过滤器、旋转泵等等。
+
+At first, a steady state simulation of the solvent recovery system is set up by ASPEN PLUS.
+首先，ASPEN PLUS 建立了溶剂回收系统的稳态模拟过程。
+But there are some features in the flash column T2O3 and the stripping tower T2O4,such as strong external disturbance,major fluctuations,large time delay,parameter drift, and non-linearity.
+但是在闪蒸塔T2O3和提馏塔T2O4中有些特征，如严重的外部干扰、大的数据波动、大的时间延迟、参数漂移和非线性化。
+T2O3/T2O4  simulation results are unsatisfactory in ASPEN PLUS.
+T2O3/T2O4 在ASPEN PLUS中的模拟结果并不合适。
+The neural network model is developed to T2O3/T2O4 performance.
+根据T2O3/T2O4 的表现神经网络模型得以开发。
+
+A. T2O3/T2O4 Toolkit of NN model
+
+For the characters, a multilayered feed-forward neural network(NN) model is constructed for T2O3/T2O4.
+
+The advantage of the NN model is non-linear mapping(NLM),and fit for simulating complicated problem of non-linear function.
+
+The volume flow,temperature,pressure of stream 11 from T2O2 and the mass flow,temperature of steam 15 is ussed to be model input.
+
+The volume flow,temperature,mass fraction of recovery oil in stream 16 is the model output.
+
+The actual data and model forecasting results of NN model is shown in table 2.
+
+Model validation shows that the model can better reflect the operation of T2O3/T2O4, and meet the production requirements.
 
