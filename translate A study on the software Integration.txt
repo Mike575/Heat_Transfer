@@ -1,0 +1,120 @@
+A Study on the Soft Integration for Solvent Recovery System Based on Computer Simulation
+基于电脑模拟的溶剂回收软件整合系统
+Abstract-摘要
+For meeting the demands of chemical process simulation, an approach to integrating the defined software and the profession simulation software is propossed.
+出于迎合化工工艺模拟的需要，本文提出了一项用于整合自定义软件和专业模拟软件的方法
+Firstly,the paper developed the software integration framework for the chemical process operation system base on information sharing.
+首先，本文基于信息共享开发了软件整合框架用于化学工艺操作系统。
+Secondly,the corresponding models between defined software and common simulation software are developed based on ActiveX technology.
+第二，在自定义软件和常用模拟软件中的相应的模块通过ActiveX技术进行开发。
+Finally, the proposed approach and technology are verified through its application in the solvent recovery system.
+最后，研究的方法和技术已经通过在溶剂回收系统软件中的应用得以证实。
+A unit of system is simulated with neural network,while other units are simulated by ASPEN PLUS
+系统中的一个单元是通过神经网络技术进行模拟的，然而其它的单元是通过ASPEN　PLUS进行模拟。
+Keywords-computer simulation; software integratin;chemical process;solvent recovery
+关键字-电脑模拟；软件整合；化学工艺；溶剂回收
+
+1.Introduction  介绍
+
+With the development of information technology and economic globalization,chemical process industries tend to be more networked and digitized.
+随着信息技术和经济全球化的发展，化工企业致力于变得更加网络化和数字化
+More efforts are concentrated to transform varies of production factors into information and integrate the information to optimize the production process.
+越来越多的工作集中在将各式各样的生产因素转变成信息再将信息整合来优化产品的生产路线
+In recent years,several software and computer tools hace been developed to aid the chemical process operation, such as ASPEN PLUS and Pro/II,ect.
+在最近几年，好几个软件和电脑工具已经被开发以用于化学工艺操作，例如ASPEN PLUS 和 Pro/II,等等。
+The software of process simulation can give accurate results and have produced great economic benefits in chemical industries.
+这些过程模拟软件能够给以精确的结果，在化工企业中产生了巨大的经济效益。
+But，currently，some special units could not be simulated at accuracy by those general simulation software because of their limitations in complicated material flow,complex structure of equipment,as well as in reaction mechanism.
+但是就目前来说，因为局限于复杂的物料流向、仪器结构和反应机理，一些特殊的单元并不能通过常用的模拟软件被精确的模拟出来。
+Software Package or Toolkit for the special units have been developed by users,while most of units in the process simulated by general simulation software with their rich physical property databasse and effective computing methods.
+一些软件程序包或工具箱已经被用户开发，虽然大多数在过程模拟中的单元能够通过常用的模拟软件借助他们丰富的物性方法数据和有效的计算方法进行模拟。
+Tt is difficult to implement the information share and application integration between common simulation software and user defined software.
+在常用的模拟软件和用户自定义的软件之间进行信息共享和软件整合是非常困难的。
+
+In this paper, a novel software integration framework with information integration and sharing is implemented.
+本文提出了一种新的软件整合框架，同时信息整合与共享得以实现。
+The corresponding models are presented software and common simulation software based on ActiveX technology,and then in order to check its validity and reliability,a neural network package and ASPEN PLUS can cooperation to simulation the process operation of solvent recovery system.
+基于ActiveX技术，相应的模块作为沟通自定义软件和常用模拟软件之间的桥梁出现。同时为了核对它的有效性和可靠性，神经网络算法程序包和ASPEN PLUS将会协同模拟溶剂回收系统的工艺路线。
+
+2. The framwork of software integration 软件整合框架
+
+The software integration includes the following sub systems: user interface,integration environment,communication technology,communication interface and software and so on.
+本软件整合系统包括以下几个子系统：用户交互界面，整合环境，对话技术，对话界面和软件等等。
+For these different sub-systems, a reciprocity and interation relation exists among them.
+对于这几个不同的子系统，它们之间存在着联系和相互作用。
+The objective of software integration is to correspond with their relation.
+软件整合的对象与它们之间的关系相一致。
+
+The different tasks of process operation simulation have a close relation with process model and procces knowledge.
+不同的工艺操作模拟任务和工艺模型以及工艺知识之间具有相关性。
+These model,knowledge and data constitute a whole and exact express for the process system.
+这些模型、知识和数据组合为一个整体，准确的表达了整个工艺系统。
+Since different software were developed by different companies,information communication between them is difficult.
+因为这些软件是由不同的公司开发的，所以要在它们之间进行沟通变得十分困难。
+In order to make the communication between these simulation software easily,the framework of software integration must be redefined,sorted and standard.
+为了使这些软件之间的沟通变得更加简便，软件整合的框架必须被重新定义、分类和标准化。
+After treated this framework,different field special software can communicate easily.
+修正框架之后，不同领域的软件之间的交流将会变得更加简单。
+At the same time,the process information can communicate expediently between different fields and different manufacturers.
+与此同时，工艺信息能够方便的不同领域和不同产商之间进行交流。
+A series of standard and methods have been provided to solve the information integration,such as STEP,CAPE-OPEN.
+为了解决信息整合问题大量标准和方法已经被提出，例如STEP、CAPE-OPEN。
+These standard and methods has attained much sustain form academic and industry field.
+这些标准和方法获得来自学术和企业领域的大量关注。
+In the paper,a three-layer software integration framework is provided.
+本文提出了一种在三个层次上的软件整合框架。
+On this framework , the software integration is realized.
+在此框架中，软件整合得以实现。
+The framework structure is shown in Fig.1
+软件架构图在图一中展示
+
+A. Integration environment  整合环境
+
+At present,software integration is based on visual programming language,such as Microsoft Visual Basic,Borland Delphi and Oracle Power Objects.
+目前软件整合基于可视化编程语言得以实现，如 Microsoft Visual Basic,Borland Delphi and Oracle Power Objects.
+These development tools not only can support visual programming interface,but also can support object linking and embedding(OLE)，open data-base connector(ODBC),and the common object request broker architecture(CORBA).
+这些开发工具不仅能够支持可视化编程界面，同样支持对象的链接与嵌入，开放式的数据库连接以及公共对象请求代理结构。
+Vary database could be set up connection with these communication funtion technologies for information exchagne.
+利用这些对话函数不同的数据库能够建立连接来实现信息共享。
+With the OLE/ODBC/CORBA/COM funtion,own servers can be accessed anytime.
+利用OLE/ODBC/CORBA/COM 函数，自己的服务器随时能够被访问。
+Different application software can assess the servers with object-oriented interface support.
+通过面向对象界面的支持，不同的应用软件能够访问这些服务器。
+The benefits of visual programming language are following.
+可视化编程的优势如下。
+On one hand , to make the programming job easil and quickly, developers focuses on interface design and application problems.
+一方面，编程工作变得容易和高效，开发者可以集中精力在界面设计和应用问题上。
+On the other hand, it makes the information communication between different software easily with communication interface.
+另一方面，由于对话界面，在不同软件间的信息交流变得简单。
+
+B. Communication standard   会话规则
+
+Information communication between different software is bassed on application os software middleware.
+不同软件间的信息交流式通过中间应用软件建立的。
+Real time database and history database have been widely used in different software.
+实时数据库和历史数据库已经广泛的应用于不同软件。
+With database,the process data are attained and put into the production database.
+利用数据库，工艺数据能够被获得并储存在产品数据库中。
+Some of them may be processsed and stored in different kind of database,such as the finance database,engineering database and equipment database.
+其中一些数据能够被加工储存在不同数据库中，例如财政数据库、工程数据库和设备数据库。
+Although the OLE,ODBC,CORBA,COM function may act as a port for information communication,it can not realize all duty of information integration.
+虽然OLE、ODBC、CORBA、COM 函数能够作为信息会话的端口，但它不能完成整个信息整合的任务。
+At the same time ,different software may use the data from other software output.
+与此同时，不同的软件有可能利用其它软件的输出数据。
+The data models may be in different types.
+数据模型可能以不同的类型存在。
+The communication technology layer is to realize data communicaton between diffferent database and different data style.
+通过会话层次技术来实现数据在不同数据库和不同数据格式之间的交流。
+In this lalyer,STEP is used as the data standard.
+在这个层次中STEP被用来作为数据规则标准
+
+STEP is an international standard for representation and exchange of production data.
+STEP 是一套陈述和交换产品数据的国际标准。
+There has been a number of application protocols (AP) of STEP used in the process industry,such as refineries and petrochemical plants.
+有许多基于STEP的应用程序协议应用于化工企业，如精炼工厂和石化工厂。
+They are AP221,AP227 and AP231.
+它们是AP221,AP227和AP231。
+These application protocols involve process data,such as of the material and stream,equipment,control,economic character,energy,and design base,etc.
+这些应用协议包括工艺数据例如物料和流量、设备、控制、经济特征、能量和设计基础等等。
+With this standard,the data collected from process could be treated,and put in the database according to the standard style.
+
