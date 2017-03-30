@@ -184,14 +184,46 @@ The neural network model is developed to T2O3/T2O4 performance.
 A. T2O3/T2O4 Toolkit of NN model
 
 For the characters, a multilayered feed-forward neural network(NN) model is constructed for T2O3/T2O4.
-
+为了描述T2O3/T2O4的特征，一个多层次前馈神经网络模型被建立。
 The advantage of the NN model is non-linear mapping(NLM),and fit for simulating complicated problem of non-linear function.
-
+前馈神经网络模型是一种非线性映射，非常适合模拟非线性的复杂问题
 The volume flow,temperature,pressure of stream 11 from T2O2 and the mass flow,temperature of steam 15 is ussed to be model input.
-
+来自T2O2的stream11的体积流量、温度和压力以及来自stream15的质量流量和温度作为模型的输入数据
 The volume flow,temperature,mass fraction of recovery oil in stream 16 is the model output.
-
+stream16中的体积流量、温度、回收油中的质量分率作为模型的输出数据。
 The actual data and model forecasting results of NN model is shown in table 2.
-
+实际的数据和前馈神经网络模型预测的数据如表2所示。
 Model validation shows that the model can better reflect the operation of T2O3/T2O4, and meet the production requirements.
+结果表明该模型能更好的反应T2O3/T2O4的操作，更适合生产的需要。
 
+B Simulated other units operation by ASPEN PLUS
+
+The product of oil recovery system is distillate oil,the liquid/air mixture,which is considered as multi-system of toluene,methyl ethyl ketone,water and mixed oil.
+油回收系统的产品是精馏油和气液混合物，该气液混合物由甲苯、甲基乙基酮、水和混合油组成。
+By using the PSRK equation in ASPEN PLUS system,the calculation accuracy meets the requirement.
+通过在ASPEN PLUS 中使用PSRK方程，计算结果的精度符合设计要求。
+The energy balance and mass balance calculation result compare to actual production data in substantial agreement.
+能量守恒和物料守恒与实际结果相比较基本上一致。
+
+C Integration of NN model Toolkit and ASPEN PLUS In Visual Basic    在Visual Bascic 中整合前馈神经网络工具与ASPEN PLUS
+
+In Visual Basic,the T2O3/T2O4 toolkit of NN model is programmed as a software package.
+在Visual Bascic 中T2O3/T2O4 的神经网络模型已经作为软件包被编写。
+The ASPEN PLUS objects are embedded to available object library of Visual Bascic.
+ASPEN PLUS 对象被嵌入到了Visual Bascic 的可用对象类库中。
+The integration of ASPEN PLUS modules and NN model is shown in Fig.5.
+ASPEN PLUS 与前馈神经网络的整合模型如图五所示。
+
+By using the ActiveX service, the ASPEN PLUS simulation result of other units except T2O3/T2O4 are collected to NN model toolkit as input.
+
+The communication interface is developed.
+
+The interface involves of GUI,variable definition,error handling,data exchange monitoring,data standardization,ActiveX service calling function,simulation results display and saving.
+
+The calculation method of whole flow sheet is shown if Fig.6.
+
+The simulation results are shown in table 3.
+
+For this example,integration of ASPEN PLUS and T2O3/T2O4 toolkit package is achieved and cooperation among different databases is successful.
+
+水的一匹
