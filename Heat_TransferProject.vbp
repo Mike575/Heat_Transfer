@@ -8,6 +8,7 @@ Reference=*\G{6EDAC1A3-C6D8-496B-8823-62F37FAA8B79}#1e.0#0#..\..\..\..\..\Progra
 Form=..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio\VB98\Form1.frm
 Module=Module1; Module1.bas
 Module=Module2; Module2.bas
+Form=Form2.frm
 IconForm="Form1"
 Startup="Form1"
 ExeName32="¹¤³Ì1.exe"

@@ -8,11 +8,6 @@ Attribute VB_Name = "Module2"
     Public str_Formula As String
     Public dbVariable As Double
     
-    Declare Function EbExecuteLine Lib "VBA6.dll" (ByVal pStringToExec As Long, ByVal Unknownn1 As Long, ByVal Unknownn2 As Long, ByVal fCheckOnly As Long) As Long
-
-    Public Function ELine(sCode As String, Optional fCheckOnly As Boolean) As Boolean
-        ELine = EbExecuteLine(StrPtr(sCode), 0&, 0&, Abs(fCheckOnly)) = 0
-    End Function
 
     
     Public Function Formula_PhaiK()        'Phai = KAdTm
@@ -100,6 +95,7 @@ Attribute VB_Name = "Module2"
             ThickPipe = (aPipe / K) * (1 - K * (1 / aCool) - K * (1 / aHot))
         ElseIf (K <> 0) And (aCool <> 0) And (aHot = 0) And (ThickPipe <> 0) And (aPipe = 0) Then
             aPipe = (1 - K * (1 / aCool) - K * (1 / aHot)) / (K * ThickPipe)
+            
         End If
     End Function
 
@@ -111,8 +107,9 @@ Attribute VB_Name = "Module2"
         FstCVarNum = 0
         LstCVarNum = 0
         CircleNumber = 0
+        Form2.Show
         
-        Do While CircleNumber <= 10
+        Do While (CircleNumber <= 4)
             FstCVarNum = NumVariable()
             Call Formula_PhaiK      'Phai = KAdTm
             Call Formula_dTm        'dTm = (dT2 - dT1) / (ln(dT1 / dT2))
@@ -121,13 +118,19 @@ Attribute VB_Name = "Module2"
             Call Formula_dT2        'dT2 = Th1 - Tc2
             Call Formula_dT1        'dT1 = Th2 - Tc1
             Call Formula_K          'K = 1 / ((1 / aCool) + (1 / aHot) + (ThickPipe / aPipe))
-
+            Form2.Print "K:"; K
+            Form2.Print "Phai:"; Phai
+            Form2.Print "dT1:"; dT1
+            Form2.Print "dT2:"; dT2
+            Form2.Print "Tc2:"; Tc2
+            Form2.Print "dTm:"; dTm
+            Form2.Print "A:"; A
+            
             LstCVarNum = NumVariable()
             If FstCVarNum = LstCVarNum Then
                 CircleNumber = CircleNumber + 1
             Else: CircleNumber = 0
             End If
-           Call Variable_Change
         Loop
         
        Call Variable_OUT

@@ -91,7 +91,7 @@ Public Function Variable_Change()
     End If
   Next i
   
-  qvLc = Form1.Text(0)       '体积流量
+  qmLc = Form1.Text(0)       '体积流量
   qmLh = Form1.Text(1)
   Tc1 = Form1.Text(2)
   Tc2 = Form1.Text(3)
@@ -113,7 +113,7 @@ End Function
 
 Public Function Variable_OUT()
   
-  Form1.Text(0) = qvLc     '体积流量
+  Form1.Text(0) = qmLc     '体积流量
   Form1.Text(1) = qmLh
   Form1.Text(2) = Tc1
   Form1.Text(3) = Tc2
@@ -135,7 +135,7 @@ End Function
 
 Public Function Variable_INPUT()
   
-  Form1.Text(0) = 30000     'qvLc体积流量
+  Form1.Text(0) = 30000     'qmLc体积流量
   Form1.Text(1) = 9075      'qmLh
   Form1.Text(2) = 20        'Tc1
   Form1.Text(3) = 0         'Tc2
