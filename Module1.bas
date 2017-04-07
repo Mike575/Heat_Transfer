@@ -26,6 +26,7 @@ Public K As Double          '总传热系数
 Public A As Double          '传热面积
 Public q As Double          '对流传热的面积热流量
 Public Phai As Double       '热流量，单位W
+Public NumVariable As Integer
 
 Public Function initial_HeatV0()
         
@@ -154,35 +155,6 @@ Public Function Variable_INPUT()
 
 
 End Function
-
-    Public Function BiSection()
-     
-            dbLow = 0
-            dbHigh = 1000000
-            Do While (dbHigh - dbLow) > 0.005
-                dbVariable = dbLow
-                dbLow_fvalue = ELine("str_formula")
-                dbVariable = dbHigh
-                dbHigh_fvalue = ELine("str_formula")
-        
-                dbMiddle = (dbLow + dbHigh) / 2
-                dbVariable = dbMiddle
-                dbMiddle_fvalue = ELine("str_Formula")
-                
-                If dbLow_fvalue * dbMiddle_fvalue < 0 Then
-                    dbHigh = dbMiddle
-                ElseIf dbLow_fvalue * dbMiddle_fvalue > 0 Then
-                    dbLow = dbMiddle
-                ElseIf dbLow_fvalue * dbMiddle_fvalue = 0 Then
-                    dbLow = dbMiddle
-                    dbHigh = dbMiddle
-                End If
-            Loop
-            dbVariable = dbMiddle
-            Print dbVariable
-
-    End Function
-
 
 
 
