@@ -8,6 +8,22 @@ Begin VB.Form Form1
    LinkTopic       =   "Form1"
    ScaleHeight     =   5295
    ScaleWidth      =   6525
+   Begin VB.ComboBox Combo1 
+      Height          =   300
+      Left            =   1440
+      Style           =   2  'Dropdown List
+      TabIndex        =   38
+      Top             =   4680
+      Width           =   1455
+   End
+   Begin VB.CommandButton Command4 
+      Caption         =   "Form3"
+      Height          =   615
+      Left            =   5520
+      TabIndex        =   37
+      Top             =   3240
+      Width           =   855
+   End
    Begin VB.TextBox Text 
       Height          =   495
       Index           =   16
@@ -328,8 +344,8 @@ Begin VB.Form Form1
       Top             =   960
       Width           =   375
    End
-   Begin VB.Label Label1 
-      Caption         =   "qvlc"
+   Begin VB.Label Lablel1 
+      Caption         =   "qmlc"
       Height          =   375
       Index           =   0
       Left            =   240
@@ -358,73 +374,18 @@ Private Sub Command3_Click()
     Call Variable_INPUT
 End Sub
 
+Private Sub Command4_Click()
+    Form3.Show
+End Sub
+
 Private Sub Form_Load()
-  
   Call initial_HeatV0
   Call initial_Form1textV0
-End Sub
-
-Private Sub Text_Change(Index As Integer)
   
-    Call Variable_Change
+  Form1.Combo1.AddItem ("美元")
 End Sub
 
-    Public Function Formula()
-        Dim CircleNumber As Integer
-        Dim FstCVarNum As Integer
-        Dim LstCVarNum As Integer
-        CircleNumber = 0
-        FstCVarNum = 0
-        LstCVarNum = 0
-        CircleNumber = 0
-        
-        Do While CircleNumber <= 10
-            FstCVarNum = NumVariable()
-            If Not (K * A * dTm) Then
-            Call Formula_PhaiK      'Phai = KAdTm
-            End If
-            If Not (dTm * dT2 * dT1) Then
-            Call Formula_dTm        'dTm = (dT2 - dT1) / (ln(dT1 / dT2))
-            End If
-            If Not (Phai * qmLh * Cph * Th1 * Th2) Then
-            Call Formula_Phaih      'Phai = qmLh * Cph * (Th1 - Th2)
-            End If
-            If Not (Phai * qmLc * Cpc * Tc2 * Tc1) Then
-            Call Formula_Phaic      'Phai = qmLc * Cpc * (Tc2 - Tc1)
-            End If
-            If Not (dT2 * Th1 * Tc2) Then
-            Call Formula_dT2        'dT2 = Th1 - Tc2
-            End If
-            If Not (dT1 * Th2 * Tc1) Then
-            Call Formula_dT1        'dT1 = Th2 - Tc1
-            End If
-            If Not (K * aCool * aHot * ThickPipe * aPipe) Then
-            Call Formula_K          'K = 1 / ((1 / aCool) + (1 / aHot) + (ThickPipe / aPipe))
-            End If
-            LstCVarNum = NumVariable()
-            If FstCVarNum = LstCVarNum Then
-                CircleNumber = CircleNumber + 1
-            Else: CircleNumber = 0
-            End If
-           Call Variable_Change
-        Loop
-        
-       Call Variable_OUT
-       
-   End Function
 
-    Public Function NumVariable() As Integer
-         
-        Dim i As Integer
-        NumVariable = 0
-        For i = 1 To 14
-            If IsNumeric(Text(i)) And (Text(i)) Then
-            '输入的是数字
-            NumVariable = NumVariable + 1
-            End If
-        Next
-    End Function
-    
     
     
     
